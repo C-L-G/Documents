@@ -1,34 +1,33 @@
-
 `timescale 1ns / 1ps
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Design Team		: 	Chinese Logic Group[CLG]
-// Engineer			:	FPGA1988 
-// Email				:	chinese-logic-group@Hotmail.com 
-// 	
-// Create Date		: 	2015/01/21 16:41:29
-// Modify Date		: 	2015/06/21 11:22:12
-// Design Name		: 	UART IP 
-// Module Name		: 	uart_core_top
-// Project Name	: 	uart_core_top
-// Target Devices	: 	XC7K410T-2FFG900I
-// Tool Versions	: 	Vivado 2013.4/Ise 14.7
-// TAP Width		: 	3
-//
-// Description		: 
-//		The top module.
-// Dependencies	: 
-// 	None.
-// Release History:
-// 	Revision 1.0	2015-01-18	FPGA1988.
+//Design Team			: 	Chinese Logic Group[CLG]
+//Engineer				:	FPGA1988 
+//Email					:	chinese-logic-group@Hotmail.com 
+// 		
+//Create Date			: 	2015/01/21 16:41:29
+//Modify Date			: 	2015/06/21 11:22:12
+//Design Name			: 	UART IP 
+//Module Name			: 	uart_core_top
+//Project Name			: 	uart_core_top
+//Target Devices		: 	XC7K410T-2FFG900I
+//Tool Versions			: 	Vivado 2013.4/Ise 14.7
+//TAP Width				: 	4
+//	
+//Description			: 
+//	The top module.
+// Dependencies			: 
+//	None.
+// Release History		:
+//	Revision 1.0	2015-01-18	FPGA1988.
 // 	Revision 2.0	2015-05-18	FPGA1988.
-// Release File	: 	uart_update_history.txt
-// Additional Comments:
-// 	REUSE ISSUES // Reset Strategy :
-// 	Clock Domains 			:	sys_25m_clk
+//Release File			: 	uart_update_history.txt
+//Additional Comments	:
+// 	Reset Strategy 		:
+// 	Clock Domains 		:	SYS_25M_CLK
 // 	Critical Timing		:
-// 	Test Features			:
-// 	Asynchronous I/F 		:
-// 	Scan Methodology 		:
+// 	Test Features		:
+// 	Asynchronous I/F 	:
+// 	Scan Methodology 	:
 // 	Instantiations 		:
 // 	Others:
 	
@@ -36,12 +35,11 @@
 `include "IncludeFileList.vh"
 module hdl_template_top(
 	//1.	System IF : logic clock and reset
-	input		wire					SYS_25M_CLK,
-	input		wire					SYS_RST,
+	input	wire					SYS_25M_CLK,
+	input	wire					SYS_RST,
 	//2.	ADS6445 IF
 	`ifdef ADC_EN
 	//2.1 Configuration serial IF
-	
 
 	//2.2	Clock and Data IF		
 
@@ -49,11 +47,10 @@ module hdl_template_top(
 	//3.	RS232 IF
 	`ifdef	RS232_EN
 	output	wire	[1:0]			RS232_TX,	//TX[0] = TX1;TX[1] = TX2
-	input		wire	[1:0]			RS232_RX,	//RX[0] = RX1;RX[1] = RX2
+	input	wire	[1:0]			RS232_RX,	//RX[0] = RX1;RX[1] = RX2
 	`endif
 	//4.	The ddr3 IF
 	`ifdef	DDR3_EN	
-
 	//9.	led output test
 	output	wire	[1:0]			LED
 
